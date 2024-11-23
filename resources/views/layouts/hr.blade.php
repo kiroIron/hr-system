@@ -44,9 +44,10 @@
   <span>Hr-system</span></div>
 </div>
 <div class="navbar-nav ml-auto">
-  <a class="btn btn-danger " href="{{route('logout')}}">
-logout
-  </a>
+  <a class="btn btn-danger" href="{{ route('logout') }}">
+    Logout
+</a>
+
 </div>
   </nav>
   <!-- /.navbar -->

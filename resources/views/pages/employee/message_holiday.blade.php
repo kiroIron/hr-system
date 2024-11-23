@@ -36,18 +36,7 @@
             @enderror
         </div>
 
-        <div class="form-group mr-4 d-flex flex-column justify-content-start align-items-start gap-5">
-            <label for="action" class="mb-3">Action</label>
-            <select name="action" id="action" class="form-control">
-                <option value="pending">Pending</option>
-                <option value="accepted">Accepted</option>
-                <option value="cancelled">Cancelled</option>
-            </select>
-            
-            @error('action')
-                <div class="text-danger mt-2">{{ $message }}</div>
-            @enderror
-        </div>
+
 
         <div>
             <button type="submit" class="btn btn-success px-5 rounded-xl" style="margin-top: 2.46rem;">

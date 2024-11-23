@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.employee')
+
 @section('content')
 <section class="d-flex justify-content-start align-items-start flex-column gap-5">
     @if(session('success'))

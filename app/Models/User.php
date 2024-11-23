@@ -23,7 +23,8 @@ class User extends Authenticatable
         'password',
         'birthday',
         'image',
-        'address'
+        'address',
+        'role',
     ];
     function team (){
         return $this->belongsTo(team::class , 'team_id') ;

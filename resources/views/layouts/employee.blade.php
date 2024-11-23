@@ -79,7 +79,7 @@ logout
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{route('pages.hr.dashboard')}}" class="nav-link  {{ request()->is('hr/dashboard') ? 'active' : '' }}">
+            <a href="{{route('pages.employee.dashboard')}}" class="nav-link  {{ request()->is('employee/dashboard') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 overview
@@ -89,44 +89,7 @@ logout
           </li>
 
           <li class="nav-item">
-            <a href="{{route('pages.hr.create_team')}}" class="nav-link  {{ request()->is('hr/createTeam') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Create Team
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('pages.hr.create_employee')}}" class="nav-link  {{ request()->is('hr/createEmployee') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Create Employee
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="{{route('pages.hr.create_task')}}" class="nav-link  {{ request()->is('hr/createTask') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                create task
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('message_problem')}}" class="nav-link  {{ request()->is('hr/message/problem') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                message problem
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('pages.employee.message_holiday')}}" class="nav-link  {{ request()->is('hr/message/holiday') ? 'active' : '' }}">
+            <a href="{{route('pages.employee.message_holiday')}}" class="nav-link  {{ request()->is('employee/message/holiday') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 message holiday
@@ -134,18 +97,6 @@ logout
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{route('message_meeting')}}" class="nav-link  {{ request()->is('hr/message/meeting') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                message_meeting
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-          </li>
-
-         
-      
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

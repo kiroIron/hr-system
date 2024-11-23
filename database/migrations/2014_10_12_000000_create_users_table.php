@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('birthday')->nullable();
             $table->string('image')->default('https://static.vecteezy.com/system/resources/previews/009/292/244/large_2x/default-avatar-icon-of-social-media-user-vector.jpg');
             $table->string('address')->nullable();
-            $table->string('role')->default('employee');
+            $table->enum('role',["admin","employee"])->default('employee');
             
         // Add default value for team_id
         $table->unsignedBigInteger('team_id')->default(1); // Set 1 as default team ID, you can adjust this as needed

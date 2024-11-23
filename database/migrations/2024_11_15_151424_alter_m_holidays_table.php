@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('date') ;
             $table->enum('action', ['pending', 'accept','cancel'])->default("pending") ;
             
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Foreign key to the teams table
 
             $table->timestamps();
