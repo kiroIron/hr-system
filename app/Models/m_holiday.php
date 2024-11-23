@@ -12,7 +12,9 @@ class m_holiday extends Model
         'subject',
         'description',
         'action',
-        'date'
+        'date',
+        'user_id', // Add this
+
     ];
 
     function user (){

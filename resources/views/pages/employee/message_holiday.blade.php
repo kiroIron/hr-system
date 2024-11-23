@@ -7,7 +7,7 @@
     <!-- Holiday creation form -->
     <form action="{{ route('store_holiday') }}" method="POST" class="form-inline p-5 d-flex justify-content-start align-items-start">
         @csrf
-        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+        {{-- <input type="hidden" name="user_id" value="{{ auth()->user()->id }}"> --}}
 
         <div class="form-group mr-4 d-flex flex-column justify-content-start align-items-start gap-5">
             <label for="subject" class="mb-3">Holiday Subject</label>
