@@ -7,6 +7,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MHolidayController;
+use App\Http\Controllers\sittingController;
 
 // Routes for public access
 Route::post('/auth/login', [AuthController::class, 'login'])->name('login');
@@ -59,23 +60,28 @@ Route::post('hr/employee/holidays/{id}/{action}', [MHolidayController::class, 'u
 
 Route::get('hr/message/meeting', [MeetController::class, 'create'])->name('message_meeting')->middleware('restrictRole:admin');
 Route::post('hr/message/meeting', [MeetController::class, 'store'])->name('store_meeting')->middleware('restrictRole:admin');
-
-
+Route::delete('hr/message/meeting/{id}', [MeetController::class, 'destroy'])->name('delete_meeting')->middleware('restrictRole:admin');
 
 Route::get('hr/createTeam', [TeamController::class, 'create'])->name('pages.hr.create_team')->middleware('restrictRole:admin');
 Route::post('hr/createTeam', [TeamController::class, 'store'])->name('pages.hr.store_team')->middleware('restrictRole:admin');
 
+//end of hr rotes
 
 
-// employee
+
+
+// employee rotes
 
 Route::get('/employee/dashboard', function () {
     return view('pages.employee.dashboard');
 })->name('pages.employee.dashboard')->middleware('restrictRole:employee');
 
-
 Route::get('employee/message/holiday', [MHolidayController::class, 'create'])->name('pages.employee.message_holiday')->middleware('restrictRole:employee');
 Route::post('employee/message/holiday', [MHolidayController::class, 'store'])->name('store_holiday')->middleware('restrictRole:employee');
 
+Route::get('employee/message/meeting', [MeetController::class, 'employeeMeetings'])->name('employee_meeting')->middleware('restrictRole:employee');
 
+Route::get('employee/profile/sitting', [SittingController::class, 'profileSitting'])->name('profile.sitting')->middleware('restrictRole:employee');
+Route::put('employee/profile/update/{id}', [SittingController::class, 'updateProfile'])->name('updateprofile')->middleware('restrictRole:employee');
+//end of employee rotes
 });

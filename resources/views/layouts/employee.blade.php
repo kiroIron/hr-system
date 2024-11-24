@@ -64,7 +64,7 @@ logout
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{Auth::user()->image}}" class="img-circle  elevation-1" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">MR.Iron</a>
@@ -93,6 +93,24 @@ logout
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 message holiday
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('employee_meeting')}}" class="nav-link  {{ request()->is('employee/message/meeting') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                message meeting
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('profile.sitting')}}" class="nav-link  {{ request()->is('employee/profile/sitting') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                profile sitting
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>

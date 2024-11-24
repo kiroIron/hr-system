@@ -44,5 +44,27 @@ class MeetController extends Controller
         // Redirect back with a success message
         return redirect()->route('message_meeting')->with('success', 'Meeting added successfully!');
     }
+    public function employeeMeetings()
+{
+    // Retrieve all meetings to show to employees
+    $meets = Meet::all();
+
+    // Pass data to the view
+    return view('pages.employee.employee_meeting', compact('meets'));
+}
+/**
+ * Delete a meeting (HR only).
+ *
+ * @param int $id
+ * @return \Illuminate\Http\RedirectResponse
+ */
+public function destroy($id)
+{
+    $meeting = Meet::findOrFail($id);
+    $meeting->delete();
+
+    return redirect()->route('message_meeting')->with('success', 'Meeting deleted successfully!');
+}
+
 }
 
