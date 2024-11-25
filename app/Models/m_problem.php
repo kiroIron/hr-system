@@ -8,11 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class m_problem extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'subject',
         'description',
+        'user_id', // Ensure this is fillable
     ];
-    function user (){
-        return $this->belongsTo(user::class , 'user_id') ;
-        }
+
+    /**
+     * Get the user who submitted the problem.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

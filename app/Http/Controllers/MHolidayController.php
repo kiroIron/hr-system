@@ -72,11 +72,11 @@ class MHolidayController extends Controller
         $holiday = m_holiday::findOrFail($id);
 
         // Check if the action is valid (only 'accepted' or 'cancelled' are allowed)
-        if (!in_array($action, ['accepted', 'cancelled'])) {
+        if (!in_array($action, ['accept', 'cancel'])) {
             return redirect()->route('pages.hr.message_holiday')
                 ->with('error', 'Invalid action. Only accepted or cancelled are allowed.');
         }
-
+        
         // Update the action field (either 'accepted' or 'cancelled')
         $holiday->action = $action;
         $holiday->save();

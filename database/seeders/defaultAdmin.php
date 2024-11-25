@@ -16,11 +16,10 @@ class defaultAdmin extends Seeder
         //
         User::create(
             [
-            'name' => 'employee',
-            'email' => 'employee@employee.com',
-            'password' => bcrypt('employee'),
-            'role' => 'employee',
-            'team_id'=> '2'
+            'name' => 'admin',
+            'email' => 'admin@admin.com',
+            'password' => bcrypt('admin'),
+            'role' => 'admin',
             ]
             );
  

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->enum('role',["admin","employee"])->default('employee');
             
         // Add default value for team_id
-        $table->unsignedBigInteger('team_id')->default(1); // Set 1 as default team ID, you can adjust this as needed
+        $table->unsignedBigInteger('team_id')->nullable(); // Set 1 as default team ID, you can adjust this as needed
         $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade'); // Foreign key to the teams table
 
             $table->timestamps();

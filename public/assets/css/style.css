@@ -1,0 +1,21 @@
+body{
+    background: #ececec;
+    font-family: 'Poppins',sans-serif;
+}
+
+.box-area{
+ width: 930px;  
+}
+.p_style{
+font-family: 'Courier New', Courier, monospace;
+font-weight: 600;
+}
+.p_stylee{
+    font-family: 'Courier New', Courier, monospace;
+font-weight: 600;
+font-size: 2rem;
+}
+div .btn_color{
+    border-radius:50px;
+    border: none;
+}

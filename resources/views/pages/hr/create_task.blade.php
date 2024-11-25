@@ -29,7 +29,7 @@
             @enderror
         </div>
 
-        <div class="form-group mr-4 d-flex flex-column justify-content-start align-items-start gap-5">
+        {{-- <div class="form-group mr-4 d-flex flex-column justify-content-start align-items-start gap-5">
             <label for="status" class="mb-3">Status</label>
             <select name="status" id="status" class="form-control">
                 <option value="pending" {{ old('status') == 'pending' ? 'selected' : '' }}>Pending</option>
@@ -39,7 +39,7 @@
             @error('status')
                 <div class="text-danger mt-2">{{ $message }}</div>
             @enderror
-        </div>
+        </div> --}}
 
         <div class="form-group mr-4 d-flex flex-column justify-content-start align-items-start gap-5">
             <label for="team_id" class="mb-3">Team</label>

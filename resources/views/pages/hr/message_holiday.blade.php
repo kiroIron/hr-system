@@ -28,11 +28,11 @@
             <td>{{ $holiday->date }}</td>
             <td>
                 @if($holiday->action == 'pending')
-                    <form action="{{ route('update_holiday_action', ['id' => $holiday->id, 'action' => 'accepted']) }}" method="POST" style="display:inline;">
+                    <form action="{{ route('update_holiday_action', ['id' => $holiday->id, 'action' => 'accept']) }}" method="POST" style="display:inline;">
                         @csrf
                         <button type="submit" class="btn btn-success">Accept</button>
                     </form>
-                    <form action="{{ route('update_holiday_action', ['id' => $holiday->id, 'action' => 'cancelled']) }}" method="POST" style="display:inline;">
+                    <form action="{{ route('update_holiday_action', ['id' => $holiday->id, 'action' => 'cancel']) }}" method="POST" style="display:inline;">
                         @csrf
                         <button type="submit" class="btn btn-danger">Cancel</button>
                     </form>

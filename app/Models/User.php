@@ -25,6 +25,7 @@ class User extends Authenticatable
         'image',
         'address',
         'role',
+        'team_id',
     ];
     function team (){
         return $this->belongsTo(team::class , 'team_id') ;

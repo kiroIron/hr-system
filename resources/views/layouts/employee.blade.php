@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/app.css">
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
 
-    
+    <link rel="icon" href="{{asset('public/image/Logo_black.jpg')}}">
     <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     
@@ -67,7 +67,7 @@ logout
           <img src="{{Auth::user()->image}}" class="img-circle  elevation-1" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">MR.Iron</a>
+          <a href="#" class="d-block">{{Auth::user()->name}}</a>
         </div>
       </div>
 
@@ -107,6 +107,24 @@ logout
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{route('employeeproblem')}}" class="nav-link  {{ request()->is('employee/message/problem') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                message problem
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('employeeTask')}}" class="nav-link  {{ request()->is('employee/message/task') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                message Task
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{route('profile.sitting')}}" class="nav-link  {{ request()->is('employee/profile/sitting') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -117,7 +135,7 @@ logout
           </li>
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
+      
     </div>
 </aside>
  <!-- Content Wrapper. Contains page content -->
@@ -127,6 +145,7 @@ logout
 </div>
 
 </body>
+@stack('js')
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>

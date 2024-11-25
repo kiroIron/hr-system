@@ -58,6 +58,8 @@ class AuthController extends Controller
         // Log the user in
         Auth::login($user);
 
+    
+
         // Redirect based on the user role
         if ($user->role == 'admin') {
             // Redirect to admin route if user is admin
